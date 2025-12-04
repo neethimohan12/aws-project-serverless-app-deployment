@@ -1,6 +1,6 @@
 # IAM role for Glue jobs
 resource "aws_iam_role" "glue_job_role" {
-  name = "${var.glue_iam_role_prefix}_glue"
+  name = "${var.glue_iam_role_prefix}_s3"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
