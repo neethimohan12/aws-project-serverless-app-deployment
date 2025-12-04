@@ -1,5 +1,5 @@
 resource "aws_glue_job" "etl_job" {
-  name              = "app3-etl-job"
+  name              = "var.job_name"
   description       = "An App3 Glue ETL job"
   role_arn          = aws_iam_role.glue_job_role.arn #Update with roleARN
   glue_version      = "5.0"
@@ -8,7 +8,7 @@ resource "aws_glue_job" "etl_job" {
   number_of_workers = 2
   worker_type       = "G.1X"
   #connections       = [aws_glue_connection.example.name]
-  execution_class   = "STANDARD"
+  execution_class = "STANDARD"
 
   command {
     script_location = "s3://${aws_s3_bucket.glue_scripts.bucket}/jobs/etl_job.py"

@@ -15,3 +15,39 @@ variable "glue_bucket_name" {
   description = "Enter Your Project Bucket Name"
   default     = "metroc-ccp-aws-project2-app3-glue-neethi"
 }
+
+variable "lambda_iam_role_prefix" {
+  type        = string
+  description = "Enter Your IAM Role Prefix"
+  default     = "Lambda_Execution_Role_with_Invoke"
+}
+
+variable "glue_iam_role_prefix" {
+  type        = string
+  description = "Enter Your IAM Role Prefix"
+  default     = "Glue_Execution_Role_with_Invoke"
+}
+
+variable "lambda_function_role_prefix" {
+  type        = string
+  description = "Enter Your IAM Role Prefix"
+  default     = "Lambda_function_invoke"
+}
+
+variable "api_name" {
+  type        = string
+  description = "Enter Your API Name"
+  default     = "AWS_Serverless_Multi_Channel_API"
+}
+
+variable "table_name" {
+  type        = string
+  description = "Enter Your DynamoDB table Name"
+  default     = "lambda-apigateway"
+}
+
+variable "job_name" {
+  type        = string
+  description = "Enter Your Glue Job Name"
+  default     = "app3-etl-job"
+}
