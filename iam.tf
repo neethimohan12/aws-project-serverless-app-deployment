@@ -19,7 +19,7 @@ resource "aws_iam_role" "glue_job_role" {
 # Lambda-1 IAM Role
 
 resource "aws_iam_role" "lambda_role_dynamodb" {
-  name = "lambda_execution_role_dynamodb_access"
+  name = "${var.lambda_iam_role_prefix}_dynamodb"
 
 
   assume_role_policy = jsonencode({
@@ -44,7 +44,7 @@ resource "aws_iam_role" "lambda_role_dynamodb" {
 #lambda s3 access role
 
 resource "aws_iam_role" "lambda_role_s3" {
-  name = "lambda_execution_role_s3_access"
+  name = "${var.lambda_iam_role_prefix}_s3"
 
 
   assume_role_policy = jsonencode({
@@ -69,7 +69,7 @@ resource "aws_iam_role" "lambda_role_s3" {
 #glue role
 
 resource "aws_iam_role" "lambda_role_glue" {
-  name = "lambda_execution_role_glue_access"
+  name = "${var.lambda_iam_role_prefix}_glue"
 
 
   assume_role_policy = jsonencode({
