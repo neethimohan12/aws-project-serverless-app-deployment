@@ -1,5 +1,5 @@
 resource "aws_dynamodb_table" "basic-dynamodb-table" {
-  name           = "var.table.name"
+  name           = var.table_name
   billing_mode   = "PROVISIONED"
   read_capacity  = 20
   write_capacity = 20
@@ -11,7 +11,7 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
   }
 
   tags = {
-    Name        = "var.table.name"
+    Name        = var.table_name
     Environment = "Prod"
   }
 }

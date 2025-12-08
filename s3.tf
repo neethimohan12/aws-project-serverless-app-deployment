@@ -7,11 +7,6 @@ resource "aws_s3_bucket" "app2_bucket" {
   }
 }
 
-resource "aws_s3_bucket_acl" "app2_bucket_acl" {
-  bucket = aws_s3_bucket.app2_bucket.id
-  acl    = "private"
-}
-
 resource "aws_s3_bucket_versioning" "app2_bucket_versioning" {
   bucket = aws_s3_bucket.app2_bucket.id
   versioning_configuration {
@@ -30,10 +25,6 @@ resource "aws_s3_bucket" "glue_scripts" {
   }
 }
 
-resource "aws_s3_bucket_acl" "app3_bucket_acl" {
-  bucket = aws_s3_bucket.glue_scripts.id
-  acl    = "private"
-}
 
 resource "aws_s3_bucket_versioning" "app3_bucket_versioning" {
   bucket = aws_s3_bucket.glue_scripts.id
@@ -45,7 +36,7 @@ resource "aws_s3_bucket_versioning" "app3_bucket_versioning" {
 resource "aws_s3_object" "glue_etl_script" {
   bucket = aws_s3_bucket.glue_scripts.id
   key    = "jobs/etl_job.py"
-  source = "jobs/etl_job.py" # Make sure this file exists locally
+  source = "jobs/etl_job.py" # Make sure this file exists locally 
 }
 
 resource "aws_s3_object" "glue_etl_data1" {

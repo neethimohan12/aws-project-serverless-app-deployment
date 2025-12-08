@@ -28,10 +28,10 @@ variable "glue_iam_role_prefix" {
   default     = "Glue_Execution_Role_with_Invoke"
 }
 
-variable "lambda_function_role_prefix" {
+variable "lambda_function_name_prefix" {
   type        = string
   description = "Enter Your IAM Role Prefix"
-  default     = "Lambda_function_invoke"
+  default     = "lambda_function_invoke"
 }
 
 variable "api_name" {
